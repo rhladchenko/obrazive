@@ -3,9 +3,9 @@
   <h1>{{ msg }}</h1>
   <form @submit.prevent="result">
     <div class="field">
-    <select @change="result" v-model="selected">
+    <select @change="result" name="press80" v-model="selected">
       <option disabled selected>{{selected}}</option>
-      <option v-for="(option, index) in options" v-bind:value="option" :key="index">
+      <option v-for="(option, index) in pres80.options" v-bind:value="option" :key="index">
         {{ option }}
       </option>
     </select>
@@ -19,31 +19,24 @@ export default {
   name: 'MainPage',
   data () {
     return {
-      options: [
-        'Закончились этикетки 80',
-        'Закончились этикетки 115',
-        'Закончились этикетки 125',
-        'Закончились этикетки 150',
-        'Закончились этикетки 180',
-        'Закончились этикетки 230'
-      ],
-      selected: 'Problem',
-      msg: 'Ok'
+      pres80: {
+        options: [
+          'Закончились этикетки 115_2',
+          'Закончились этикетки 125_2',
+          'Закончились этикетки 125_6'
+        ]
+      },
+      msg: 'Ok',
+      selected: 'Problem'
     }
   },
   methods: {
     result () {
-      if (this.selected === 'Закончились этикетки 80') {
-        this.msg = 'Перейти к изготовлению 115'
-      } else if (this.selected === 'Закончились этикетки 115') {
-        this.msg = 'Перейти к изготовлению 125'
-      } else if (this.selected === 'Закончились этикетки 125') {
-        this.msg = 'Перейти к изготовлению 150'
-      } else if (this.selected === 'Закончились этикетки 150') {
-        this.msg = 'Перейти к изготовлению 180'
-      } else if (this.selected === 'Закончились этикетки 180') {
-        this.msg = 'Перейти к изготовлению 230'
-      } else if (this.selected === 'Закончились этикетки 230') {
+      if (this.selected === 'Закончились этикетки 115_2') {
+        this.msg = 'Перейти к изготовлению 125_2'
+      } else if (this.selected === 'Закончились этикетки 125_2') {
+        this.msg = 'Перейти к изготовлению 125_6'
+      } else if (this.selected === 'Закончились этикетки 125_6') {
         this.msg = 'Бери шинель...'
       }
     }
