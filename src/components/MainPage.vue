@@ -1,6 +1,6 @@
 <template>
   <div class="main-page">
-  <h1>{{ msg }}</h1>
+  <h1>{{ msg | capitalize }}</h1>
   <form @submit.prevent="result">
     <div class="field">
     <select @change="result" name="press80" v-model="selected">
@@ -33,11 +33,11 @@ export default {
   methods: {
     result () {
       if (this.selected === 'Закончились этикетки 115_2') {
-        this.msg = 'Перейти к изготовлению 125_2'
+        this.msg = 'перейти к изготовлению 125_2'
       } else if (this.selected === 'Закончились этикетки 125_2') {
-        this.msg = 'Перейти к изготовлению 125_6'
+        this.msg = 'перейти к изготовлению 125_6'
       } else if (this.selected === 'Закончились этикетки 125_6') {
-        this.msg = 'Бери шинель...'
+        this.msg = 'бери шинель...'
       }
     }
   }
